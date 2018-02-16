@@ -1,5 +1,4 @@
 # IDate
-=====
 
 Iranian Date constractor for Javascript, Just like native js Date.
 
