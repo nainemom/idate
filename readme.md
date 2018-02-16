@@ -1,6 +1,6 @@
 # IDate
 
-Iranian Date constractor for Javascript, Just like native js Date.
+> Iranian Date constractor for Javascript, Just like native js Date.
 
 ## Installation
 
