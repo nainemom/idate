@@ -1,6 +1,6 @@
 {
   "name": "idate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Iranian Date constractor for Javascript",
   "main": "dist/idate.min.js",
   "scripts": {
