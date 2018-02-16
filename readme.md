@@ -32,9 +32,8 @@ For initializing `IDate` you may either pass parameteres of Jalali date to it ju
 
 ```javascript
 const date = new IDate() // => default to today
-const date2 = new IDate(1396, 6, 5])
-const date3 = new IDate(new Date(2017, 8, 27));
-
+const date2 = new IDate(1396, 6, 5)
+const date3 = new IDate(new Date(2017, 8, 27))
 ```
 
 ### API
