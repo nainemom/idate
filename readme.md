@@ -60,4 +60,4 @@ date.toISOString() // 1992-09-22T20:30:00.000Z
 ```
 
 ### Difference with native Date?
-`IDate` is instance of native `Date`. All methods acting just like native one, so you can sending `IDate` by ajax libs to server or `JSON.stringify` it, and anything works well. it will automatically converts to ISO.
+`IDate` is an instance of native `Date`. All methods act just like the native API, so you can send `IDate` by AJAX libs to server or run `JSON.stringify` on it. Everything else works as well. It will also automatically convert to ISO.
