@@ -84,8 +84,14 @@ export default class IDate extends Date {
     this.gdate.setDate(converted.gd)
   }
   toString () {
-    const DAY_NAMES = ['Shanbe', 'Yekshanbe', 'Doshanbe', 'Seshanbe', 'Chaharshanbe', 'Panjshanbe', 'Jom\'e']
-    const MONTH_NAMES = ['Farvardin', 'Ordibehesht', 'Khordad', 'Tir', 'Mordad', 'Shahrivar', 'Mehr', 'Aban', 'Azar', 'Dey', 'Bahman', 'Esfand']
-    return `${DAY_NAMES[this.getDay()]} ${this.getDate()} ${MONTH_NAMES[this.getMonth()]} ${this.getFullYear()} ${this.getHours()}:${this.getMinutes()}:${this.getSeconds()}`
+    const DAY_NAMES = ['شنبه', 'یک‌شنبه', 'دوشنبه', 'سه‌شنبه', 'چهارشنبه', 'پنج‌شنبه', 'جمعه']
+    const MONTH_NAMES = ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'در', 'بهمن', 'اسفند']
+    const replaceNums = (str) => {
+      const nums = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹']
+      return str.replace(/./g, c => nums[c] || c)
+    }
+    const padNumber = (num) => num.toString().length === 1 ? `0${num}` : num.toString()
+    const time = `${padNumber(this.getHours())}:${padNumber(this.getMinutes())}:${padNumber(this.getSeconds())}`
+    return replaceNums(`${DAY_NAMES[this.getDay()]} ${this.getDate()} ${MONTH_NAMES[this.getMonth()]} ${this.getFullYear()} ساعت ${time}`)
   }
 }
