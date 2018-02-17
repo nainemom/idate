@@ -1,31 +1,79 @@
 import {toGregorian, toJalaali, fixDate} from './utils.js'
 
+const methods = [
+  'getHours',
+  'getMilliseconds',
+  'getMinutes',
+  'getSeconds',
+  'getTime',
+  'getTimezoneOffset',
+  'getUTCDate',
+  'getUTCDay',
+  'getUTCFullYear',
+  'getUTCHours',
+  'getUTCMilliseconds',
+  'getUTCMinutes',
+  'getUTCMonth',
+  'getUTCSeconds',
+  'now',
+  'parse',
+  'setHours',
+  'setMilliseconds',
+  'setMinutes',
+  'setSeconds',
+  'setTime',
+  'setUTCDate',
+  'setUTCFullYear',
+  'setUTCHours',
+  'setUTCMilliseconds',
+  'setUTCMinutes',
+  'setUTCMonth',
+  'setUTCSeconds',
+  'toDateString',
+  'toISOString',
+  'toJSON',
+  'toLocaleDateString',
+  'toLocaleTimeString',
+  'toLocaleString',
+  'toTimeString',
+  'toUTCString',
+  'UTC',
+  'valueOf'
+]
+
+const DAY_NAMES = ['Shanbe', 'Yekshanbe', 'Doshanbe', 'Seshanbe', 'Chaharshanbe', 'Panjshanbe', 'Jom\'e']
+const PERSIAN_DAY_NAMES = ['شنبه', 'یکشنبه', 'دوشنبه', 'سه‌شنبه', 'چهارشنبه', 'پنجشنبه', 'جمعه']
+const MONTH_NAMES = ['Farvardin', 'Ordibehesht', 'Khordad', 'Tir', 'Mordad', 'Shahrivar', 'Mehr', 'Aban', 'Azar', 'Dey', 'Bahman', 'Esfand']
+const PERSIAN_MONTH_NAMES = ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند']
+
 export default class IDate extends Date {
-  constructor (a, b, c, d, e, f, g) {
+  constructor () {
     super()
-    let x
-    if (arguments.length === 0) {
-      x = Date.now()
-    } else if (arguments.length === 1) {
-      if (a instanceof Date) {
-        x = a.getTime()
-      } else {
-        x = a
-      }
-    } else if (arguments.length >= 2) {
-      const fixed = fixDate(a, b || 0, typeof c === 'undefined' ? 1 : c)
-      const converted = toGregorian(fixed[0], fixed[1] + 1, fixed[2])
-      x = [converted.gy, converted.gm - 1, converted.gd].concat([d || 0, e || 0, f || 0, g || 0])
-    }
-    if (Array.isArray(x)) {
-      this.gdate = new Date(...x)
+
+    let date
+    const args = Array.from(arguments)
+    if (args.length === 0) {
+      date = Date.now()
+    } else if (args.length === 1) {
+      date = args[0] instanceof Date ? args[0].getTime() : args[0]
     } else {
-      this.gdate = new Date(x)
+      const fixed = fixDate(
+        args[0],
+        args[1] || 0,
+        typeof args[2] === 'undefined' ? 1 : args[2])
+      const converted = toGregorian(fixed[0], fixed[1] + 1, fixed[2])
+      date = [converted.gy, converted.gm - 1, converted.gd].concat([args[3] || 0, args[4] || 0, args[5] || 0, args[6] || 0])
     }
+
+    if (Array.isArray(date)) {
+      this.gdate = new Date(...date)
+    } else {
+      this.gdate = new Date(date)
+    }
+
     const converted = toJalaali(this.gdate.getFullYear(), this.gdate.getMonth() + 1, this.gdate.getDate())
     this.jdate = [converted.jy, converted.jm - 1, converted.jd]
 
-    const methods = ['getHours', 'getMilliseconds', 'getMinutes', 'getSeconds', 'getTime', 'getTimezoneOffset', 'getUTCDate', 'getUTCDay', 'getUTCFullYear', 'getUTCHours', 'getUTCMilliseconds', 'getUTCMinutes', 'getUTCMonth', 'getUTCSeconds', 'now', 'parse', 'setHours', 'setMilliseconds', 'setMinutes', 'setSeconds', 'setTime', 'setUTCDate', 'setUTCFullYear', 'setUTCHours', 'setUTCMilliseconds', 'setUTCMinutes', 'setUTCMonth', 'setUTCSeconds', 'toDateString', 'toISOString', 'toJSON', 'toLocaleDateString', 'toLocaleTimeString', 'toLocaleString', 'toTimeString', 'toUTCString', 'UTC', 'valueOf']
     methods.forEach(method => {
       IDate.prototype[method] = function () {
         return this.gdate[method](...arguments)
@@ -36,6 +84,7 @@ export default class IDate extends Date {
   getFullYear () {
     return this.jdate[0]
   }
+
   setFullYear (value) {
     if (!value) {
       return NaN
@@ -49,6 +98,7 @@ export default class IDate extends Date {
   getMonth () {
     return this.jdate[1]
   }
+
   setMonth (value) {
     if (!value) {
       return NaN
@@ -83,9 +133,12 @@ export default class IDate extends Date {
     this.gdate.setMonth(converted.gm - 1)
     this.gdate.setDate(converted.gd)
   }
-  toString () {
-    const DAY_NAMES = ['Shanbe', 'Yekshanbe', 'Doshanbe', 'Seshanbe', 'Chaharshanbe', 'Panjshanbe', 'Jom\'e']
-    const MONTH_NAMES = ['Farvardin', 'Ordibehesht', 'Khordad', 'Tir', 'Mordad', 'Shahrivar', 'Mehr', 'Aban', 'Azar', 'Dey', 'Bahman', 'Esfand']
+
+  toString (persianString = false) {
+    if (persianString) {
+      return `${PERSIAN_DAY_NAMES[this.getDay()]} ${this.getDate()} ${PERSIAN_MONTH_NAMES[this.getMonth()]} ${this.getFullYear()} ${this.getHours()}:${this.getMinutes()}:${this.getSeconds()}`
+    }
+
     return `${DAY_NAMES[this.getDay()]} ${this.getDate()} ${MONTH_NAMES[this.getMonth()]} ${this.getFullYear()} ${this.getHours()}:${this.getMinutes()}:${this.getSeconds()}`
   }
 }
