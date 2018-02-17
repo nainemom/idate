@@ -2,6 +2,20 @@ const assert = require('assert')
 const IDate = require('../dist/idate.js')
 
 describe('IDate', () => {
+  it('should support date object as argument', () => {
+    const ndate = new Date(1992, 8, 27)
+    const date = new IDate(ndate)
+    assert.equal(date.getFullYear(), 1371)
+    assert.equal(date.getMonth(), 6)
+    assert.equal(date.getDate(), 5)
+  })
+  it('should support idate object as argument', () => {
+    const idate = new IDate(1371, 6, 5)
+    const date = new IDate(idate)
+    assert.equal(date.getFullYear(), 1371)
+    assert.equal(date.getMonth(), 6)
+    assert.equal(date.getDate(), 5)
+  })
   it('should truly convert date', () => {
     const date = new IDate(1371, 6, 5)
     assert.equal(date.gdate.getFullYear(), 1992)
