@@ -7,7 +7,9 @@ Iranian Date constractor for Javascript, Just like native javascript `Date`.
 ## Installation
 
 ```terminal
-npm install idate
+npm install idate --save
+# or
+yarn add idate
 ```
 
 ### Browser
@@ -31,10 +33,10 @@ const IDate = require('idate')
 For initializing `IDate` you may either pass parameteres of Jalali date to it just like native Date. Other type of params like `Date` || `IDate` object or `ISOString` or `Milliseconds` also supported.
 
 ```javascript
-const d = new IDate()
-const d = new IDate(milliseconds)
-const d = new IDate(gregorianDateString)
-const d = new IDate(jalaliYear, jalaliMonth, jalaliDay, hours, minutes, seconds, milliseconds)
+new IDate()
+new IDate(milliseconds)
+new IDate(gregorianDateString)
+new IDate(jalaliYear, jalaliMonth, jalaliDay, hours, minutes, seconds, milliseconds)
 ```
 
 ### API
