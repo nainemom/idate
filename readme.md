@@ -28,13 +28,13 @@ const IDate = require('idate')
 
 ### Initialization
 
-For initializing `IDate` you may either pass parameteres of Jalali date to it just like native Date. Other type of params like `Date` object or `ISOString` or `Milliseconds` also supported.
+For initializing `IDate` you may either pass parameteres of Jalali date to it just like native Date. Other type of params like `Date` || `IDate` object or `ISOString` or `Milliseconds` also supported.
 
 ```javascript
-const d = new IDate();
-const d = new IDate(milliseconds);
-const d = new IDate(gregorianDateString);
-const d = new IDate(jalaliYear, jalaliMonth, jalaliDay, hours, minutes, seconds, milliseconds);
+const d = new IDate()
+const d = new IDate(milliseconds)
+const d = new IDate(gregorianDateString)
+const d = new IDate(jalaliYear, jalaliMonth, jalaliDay, hours, minutes, seconds, milliseconds)
 ```
 
 ### API
