@@ -20,7 +20,7 @@ export function toGregorian (jy, jm, jd) {
 /*
 Checks whether a Jalaali date is valid or not.
 */
-export function isValidJalaaliDate (jy, jm, jd) {
+function isValidJalaaliDate (jy, jm, jd) {
   return jy >= -61 && jy <= 3177 &&
         jm >= 1 && jm <= 12 &&
         jd >= 1 && jd <= monthLength(jy, jm)
@@ -29,7 +29,7 @@ export function isValidJalaaliDate (jy, jm, jd) {
 /*
 Is this a leap year or not?
 */
-export function isLeapJalaaliYear (jy) {
+function isLeapJalaaliYear (jy) {
   return jalCal(jy).leap === 0
 }
 
@@ -56,7 +56,7 @@ day of the Jalaali year (jy).
 @see: http://www.astro.uni.torun.pl/~kb/Papers/EMP/PersianC-EMP.htm
 @see: http://www.fourmilab.ch/documents/calendar/
 */
-export function jalCal (jy) {
+function jalCal (jy) {
 // Jalaali years starting the 33-year rule.
   var breaks = [-61, 9, 38, 199, 426, 686, 756, 818, 1111, 1181, 1210, 1635, 2060, 2097, 2192, 2262, 2324, 2394, 2456, 3178]
   var bl = breaks.length
@@ -114,7 +114,7 @@ Converts a date of the Jalaali calendar to the Julian Day number.
 @param jd Jalaali day (1 to 29/31)
 @return Julian Day number
 */
-export function j2d (jy, jm, jd) {
+function j2d (jy, jm, jd) {
   var r = jalCal(jy)
   return g2d(r.gy, 3, r.march) + (jm - 1) * 31 - div(jm, 7) * (jm - 7) + jd - 1
 }
@@ -127,7 +127,7 @@ Converts the Julian Day number to a date in the Jalaali calendar.
   jm: Jalaali month (1 to 12)
   jd: Jalaali day (1 to 29/31)
 */
-export function d2j (jdn) {
+function d2j (jdn) {
   var gy = d2g(jdn).gy // Calculate Gregorian year (gy).
   var jy = gy - 621
   var r = jalCal(jy)
@@ -176,7 +176,7 @@ calendars) up to a few million years into the future.
 @param gd Calendar day of the month (1 to 28/29/30/31)
 @return Julian Day number
 */
-export function g2d (gy, gm, gd) {
+function g2d (gy, gm, gd) {
   var d = div((gy + div(gm - 8, 6) + 100100) * 1461, 4) +
     div(153 * mod(gm + 9, 12) + 2, 5) +
     gd - 34840408
@@ -194,7 +194,7 @@ calendars) to some millions years ahead of the present.
   gm: Calendar month (1 to 12)
   gd: Calendar day of the month M (1 to 28/29/30/31)
 */
-export function d2g (jdn) {
+function d2g (jdn) {
   var j,
     i,
     gd,
@@ -216,11 +216,11 @@ export function d2g (jdn) {
 Utility helper functions.
 */
 
-export function div (a, b) {
+function div (a, b) {
   return ~~(a / b)
 }
 
-export function mod (a, b) {
+function mod (a, b) {
   return a - ~~(a / b) * b
 }
 
