@@ -1,6 +1,8 @@
 # IDate
 
-> Iranian Date constractor for Javascript, Just like native javascript `Date`.
+Iranian Date constractor for Javascript, Just like native javascript `Date`.
+> Date convertor functions hard copied from [`jalaali-js`](https://github.com/jalaali/jalaali-js)!
+
 
 ## Installation
 
