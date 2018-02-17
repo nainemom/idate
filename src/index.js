@@ -7,7 +7,11 @@ export default class IDate extends Date {
     if (arguments.length === 0) {
       x = Date.now()
     } else if (arguments.length === 1) {
-      x = a
+      if (a instanceof Date) {
+        x = a.getTime()
+      } else {
+        x = a
+      }
     } else if (arguments.length >= 2) {
       const fixed = fixDate(a, b || 0, typeof c === 'undefined' ? 1 : c)
       const converted = toGregorian(fixed[0], fixed[1] + 1, fixed[2])
