@@ -41,21 +41,21 @@ new IDate(jalaliYear, jalaliMonth, jalaliDay, hours, minutes, seconds, milliseco
 
 ### API
 ```javascript
-const date = new IDate(1396, 6, 5)
+const date = new IDate(1396, 5, 5)
 
 // Getters
 date.getFullYear() // 1396
-date.getMonth() // 6 (indexed from zero, so 6 is Mehr)
+date.getMonth() // 5 (indexed from zero, so 5 is شهریور)
 date.getDate() // 5 (day in month)
-date.getDay() // 4 (day of week started from saturday and indexed from zero, so 4 is Chaharshanbe)
+date.getDay() // 4 (day of week started from saturday and indexed from zero, so 4 is چهارشنبه)
 
 // Setters
 date.setFullYear(1371)
-date.setMonth(0)
+date.setMonth(6)
 date.setDate(1)
 
 // Formated output
-date.toString() // Chaharshanbe 1 Mehr 1371 0:0:0
+date.toString() // چهارشنبه ۱ مهر ۱۳۷۱ ساعت ۰۰:۰۰:۰۰
 date.toISOString() // 1992-09-22T20:30:00.000Z
 ```
 
