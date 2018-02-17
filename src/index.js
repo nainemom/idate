@@ -21,7 +21,7 @@ export default class IDate extends Date {
     const converted = toJalaali(this.gdate.getFullYear(), this.gdate.getMonth() + 1, this.gdate.getDate())
     this.jdate = [converted.jy, converted.jm - 1, converted.jd]
 
-    const methods = ['getHours', 'setHours', 'getMinutes', 'setMinutes', 'getSeconds', 'setSeconds', 'getMilliseconds', 'setMilliseconds', 'valueOf', 'toISOString']
+    const methods = ['getHours', 'getMilliseconds', 'getMinutes', 'getSeconds', 'getTime', 'getTimezoneOffset', 'getUTCDate', 'getUTCDay', 'getUTCFullYear', 'getUTCHours', 'getUTCMilliseconds', 'getUTCMinutes', 'getUTCMonth', 'getUTCSeconds', 'now', 'parse', 'setHours', 'setMilliseconds', 'setMinutes', 'setSeconds', 'setTime', 'setUTCDate', 'setUTCFullYear', 'setUTCHours', 'setUTCMilliseconds', 'setUTCMinutes', 'setUTCMonth', 'setUTCSeconds', 'toDateString', 'toISOString', 'toJSON', 'toLocaleDateString', 'toLocaleTimeString', 'toLocaleString', 'toTimeString', 'toUTCString', 'UTC', 'valueOf']
     methods.forEach(method => {
       IDate.prototype[method] = function () {
         return this.gdate[method](...arguments)
