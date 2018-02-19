@@ -55,7 +55,7 @@ date.setMonth(6)
 date.setDate(1)
 
 // Formated output
-date.toString() // چهارشنبه ۱ مهر ۱۳۷۱ ساعت ۰۰:۰۰:۰۰
+date.toString(persianString = true) // چهارشنبه ۱ مهر ۱۳۷۱ ساعت ۰۰:۰۰:۰۰ or Chaharshanbe 1 Mehr 1371 00:00:00
 date.toISOString() // 1992-09-22T20:30:00.000Z
 ```
 
