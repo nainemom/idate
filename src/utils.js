@@ -17,14 +17,14 @@ export function toGregorian (jy, jm, jd) {
   return d2g(j2d(jy, jm, jd))
 }
 
-/*
-Checks whether a Jalaali date is valid or not.
-*/
-function isValidJalaaliDate (jy, jm, jd) {
-  return jy >= -61 && jy <= 3177 &&
-        jm >= 1 && jm <= 12 &&
-        jd >= 1 && jd <= monthLength(jy, jm)
-}
+// /*
+// Checks whether a Jalaali date is valid or not.
+// */
+// function isValidJalaaliDate (jy, jm, jd) {
+//   return jy >= -61 && jy <= 3177 &&
+//         jm >= 1 && jm <= 12 &&
+//         jd >= 1 && jd <= monthLength(jy, jm)
+// }
 
 /*
 Is this a leap year or not?
