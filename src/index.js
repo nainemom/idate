@@ -87,13 +87,9 @@ export default class IDate extends Date {
   }
 
   setFullYear (value) {
-    if (!value) {
-      return NaN
-    } else {
-      this.jdate = fixDate(value, this.jdate[1], this.jdate[2])
-      this.syncDate()
-      return this.gdate.getTime()
-    }
+    this.jdate = fixDate(value, this.jdate[1], this.jdate[2])
+    this.syncDate()
+    return this.gdate.getTime()
   }
 
   getMonth () {
@@ -101,13 +97,9 @@ export default class IDate extends Date {
   }
 
   setMonth (value) {
-    if (!value) {
-      return NaN
-    } else {
-      this.jdate = fixDate(this.jdate[0], value, this.jdate[2])
-      this.syncDate()
-      return this.gdate.getTime()
-    }
+    this.jdate = fixDate(this.jdate[0], value, this.jdate[2])
+    this.syncDate()
+    return this.gdate.getTime()
   }
 
   getDate () {
@@ -115,13 +107,9 @@ export default class IDate extends Date {
   }
 
   setDate (value) {
-    if (!value) {
-      return NaN
-    } else {
-      this.jdate = fixDate(this.jdate[0], this.jdate[1], value)
-      this.syncDate()
-      return this.gdate.getTime()
-    }
+    this.jdate = fixDate(this.jdate[0], this.jdate[1], value)
+    this.syncDate()
+    return this.gdate.getTime()
   }
 
   getDay () {
