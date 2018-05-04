@@ -226,9 +226,16 @@ function mod (a, b) {
 
 export function fixDate (y, m, d) {
   if (m < 0 || m > 11) {
-    const yearDiff = Math.floor(m / 12) + (m < 0 ? 1 : 0)
-    m += (-1 * yearDiff * 12)
-    y += yearDiff
+    if (m > 11) {
+      y += Math.floor(m / 12)
+      m += m % 12
+    }
+    if (m < 0) {
+      while (m < 0) {
+        y -= 1
+        m += 12
+      }
+    }
   }
   while (d > monthLength(y, m + 1)) {
     m = m !== 11 ? m + 1 : 0
@@ -240,5 +247,6 @@ export function fixDate (y, m, d) {
     y = m === 11 ? y - 1 : y
     d += monthLength(y, m + 1)
   }
+  console.log(d, m, y)
   return [y, m || 0, d || 1]
 }
