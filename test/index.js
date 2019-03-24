@@ -30,16 +30,30 @@ describe('IDate', () => {
     })
   })
   describe('#setDate', () => {
-    it('should act like native js Date on +', () => {
-      const enDate = new Date()
-      const faDate = new IDate()
+    it('should act like native js Date on + (kabise)', () => {
+      const enDate = new Date(1553470566470)
+      const faDate = new IDate(1553470566470)
       enDate.setDate(enDate.getDate() + 2536)
       faDate.setDate(faDate.getDate() + 2536)
       assert.equal(enDate.toISOString(), faDate.toISOString())
     })
-    it('should act like native js Date on -', () => {
-      const enDate = new Date()
-      const faDate = new IDate()
+    it('should act like native js Date on + (not-kabise)', () => {
+      const enDate = new Date(1534030492804)
+      const faDate = new IDate(1534030492804)
+      enDate.setDate(enDate.getDate() + 2536)
+      faDate.setDate(faDate.getDate() + 2536)
+      assert.equal(enDate.toISOString(), faDate.toISOString())
+    })
+    it('should act like native js Date on - (kabise)', () => {
+      const enDate = new Date(1553470566470)
+      const faDate = new IDate(1553470566470)
+      enDate.setDate(enDate.getDate() - 1231)
+      faDate.setDate(faDate.getDate() - 1231)
+      assert.equal(enDate.toISOString(), faDate.toISOString())
+    })
+    it('should act like native js Date on - (not-kabise)', () => {
+      const enDate = new Date(1534030492804)
+      const faDate = new IDate(1534030492804)
       enDate.setDate(enDate.getDate() - 1231)
       faDate.setDate(faDate.getDate() - 1231)
       assert.equal(enDate.toISOString(), faDate.toISOString())
