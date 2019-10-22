@@ -5,32 +5,15 @@
   "main": "dist/idate.min.js",
   "scripts": {
     "clean": "rimraf ./dist",
-    "build": "cross-env NODE_ENV=production webpack --progress --colors",
+    "build": "rollup -c rollup.config.js",
     "dev": "webpack --progress --colors --watch",
     "lint": "eslint ./ --ext .js",
     "lint:fix": "eslint ./ --ext .js --fix",
     "test": "npm run lint && mocha",
-    "prepublish": "npm run clean & npm run build"
+    "prepublish": "echo hi"
   },
   "author": "nainemom <nainemom@gmail.com>",
   "license": "ISC",
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.1",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-preset-env": "^1.6.1",
-    "cross-env": "^5.1.3",
-    "eslint": "^4.17.0",
-    "eslint-config-standard": "^11.0.0-beta.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-node": "^6.0.0",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "mocha": "^5.0.1",
-    "rimraf": "^2.6.2",
-    "webpack": "^3.11.0"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nainemom/idate.git"
@@ -46,5 +29,13 @@
   "bugs": {
     "url": "https://github.com/nainemom/idate/issues"
   },
-  "homepage": "https://github.com/nainemom/idate#readme"
+  "homepage": "https://github.com/nainemom/idate#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "rollup": "^1.25.1",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-uglify": "^6.0.3"
+  }
 }
