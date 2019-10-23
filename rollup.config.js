@@ -1,8 +1,8 @@
-import { uglify } from "rollup-plugin-uglify";
-import babel from 'rollup-plugin-babel';
-import babelPreset from '@babel/preset-env';
+import { uglify } from 'rollup-plugin-uglify'
+import babel from 'rollup-plugin-babel'
+import babelPreset from '@babel/preset-env'
 
-function configCreator(input, output) {
+function configCreator (input, output) {
   return {
     input: input,
     output: {
@@ -26,12 +26,12 @@ function configCreator(input, output) {
           unsafe_math: true,
           unsafe_undefined: true
         }
-      }),
+      })
     ]
   }
 }
 export default [
   configCreator('src/index.js', 'dist/index.js'),
   configCreator('src/jalali.js', 'dist/jalali.js'),
-  configCreator('src/hijri.js', 'dist/hijri.js'),
+  configCreator('src/hijri.js', 'dist/hijri.js')
 ]

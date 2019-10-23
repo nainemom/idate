@@ -39,6 +39,6 @@ function generateConfig (config = {
 const ret = []
 ret.push(generateConfig())
 if (process.env.NODE_ENV === 'production') {
-  ret.push(generateConfig({minimize: true}))
+  ret.push(generateConfig({ minimize: true }))
 }
 module.exports = ret

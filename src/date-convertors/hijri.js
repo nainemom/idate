@@ -1,10 +1,10 @@
 const a = 28
 const b = 29
 const c = 30
-const arr = [0,b,b,c,b,c,b,c,c,b,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,c,c,b,c,b,b,c,b,b,c,c,b,c,c,c,b,c,b,b,c,b,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,c,b,c,b,c,b,c,a,c,c,c,b,c,b,c,b,c,b,c,b,c,b,c,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,c,b,c,b,c,b,c,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,c,b,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,c,b,b,c,c,c,b,c,b,c,b,c,b,b,c,c,b,b,c,b,b,c,c,c,b,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,c,b,c,b,c,b,c,b,c,b,c,b,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,c,b,c,c,b,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,b,c,b,c,c,c,b,c,c,b,b,c,b,c,b,c,b,c,c,b,b,c,b,c,b,c,b,c,b,c,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,c,b,c,b,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,b,c,b,c,c,b,b,c,b,c,b,c,b,c,b,c,c,c,b,c,b,b,b,c,b,c,b,c,c,c,b,c,b,c,b,c,b,b,c,c,b,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,c,c,b,c,b,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,c,b,c,c,b,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,b,c,c,b,c,c,c,b,c,b,b,c,b,b,c,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,b,c,b,c,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,b,c,c,b,c,c,c,b,c,b,b,c,b,b,c,c,b,c,c,b,c,c,b,b,c,b,b,c,b,c,c,c,b,c,b,c,b,c,b,b,c,b,c,c,b,c,c,b,c,b,c,b,c,b,b,c,b,c,c,b,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,c,b,b,c,b,c,c,c,c,b,c,b,b,c,b,b,b,c,c,c,c,b,c,c,b,b,c,b,b,b,c,c,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,c,b,c,b,c,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,b,c,c,c,b,c,c,b,c,b,b,c,b,b,c,c,c,b,c,c,b,c,b,b,c,b,b,c,c,b,c,c,b,c,c,b,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,b,c,b,c,c,c,b,c,b,c,b,c,b,b,c,b,c,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,c,b,b,c,b,c,b,b,c,c,b,c,c,c,b,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,c,b,b,c,b,c,b,c,b,c,c,c,b,c,b,b,c,b,b,c,b,c,c,c,c,b,c,b,b,c,b,b,c,b,c,c,c,b,c,b,c,b,c,b,b,c,b,c,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,c,c,b,c,b,b,c,b,c,b,c,b,c,c,c,b,b,c,b,c,b,c,b,b,c,c,c,b,c,b,c,b,c,b,c,b,b,c,c,b,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,b,c,c,b,c,c,c,b,c,b,b,c,b,b,c,c,b,c,c,c,b,c,b,b,c,b,b,c,c,b,c,c,b,c,b,c,b,c,b,b,c,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,b,c,b,c,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,b,c,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,b,c,c,b,c,c,b,c,c,b,b,c,b,b,c,c,b,c,b,c,c,c,b,b,c,b,b,c,b,c,c,b,c,c,b,c,b,c,b,c,b,b,c,b,c,c,b,c,b,c,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,c,c,b,c,b,b,c,b,b,c,b,c,c,c,b,c,c,b,b,c,b,b,c,b,c,c,b,c,c,c,b,b,c,b,b,c,b,c,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,b,c,c,b,b,c,b,c,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,b,c,c,b,c,c,c,b,c,b,b,c,b,b,c,c,b,c,c,b,c,c,b,b,c,b,b,c,c,b,c,c,b,c,c,b,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,b,c,b,c,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,c,b,c,b,c,c,b,b,c,b,c,b,c,b,c,c,b,c,c,b,b,c,b,c,b,b,c,c,b,c,c,c,b,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,c,b,b,c,b,b,c,b,c,c,c]
+const arr = [0, b, b, c, b, c, b, c, c, b, b, c, b, c, b, c, b, c, b, c, b, c, b, c, c, c, c, b, c, b, b, c, b, b, c, c, b, c, c, c, b, c, b, b, c, b, b, c, b, c, b, c, b, c, b, c, b, c, b, c, c, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, c, c, b, c, b, c, b, c, a, c, c, c, b, c, b, c, b, c, b, c, b, c, b, c, c, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, c, c, b, c, b, c, b, c, c, b, c, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, b, c, b, c, b, c, c, c, b, c, b, c, b, c, b, b, c, b, c, c, b, c, b, c, b, c, b, c, b, c, b, c, c, b, c, b, c, b, c, c, b, b, c, c, c, b, c, b, c, b, c, b, b, c, c, b, b, c, b, b, c, c, c, b, c, b, c, b, c, b, b, c, b, c, b, c, c, b, c, c, c, b, c, b, c, b, c, b, c, b, c, b, b, c, b, c, b, c, b, c, b, c, b, c, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, c, b, c, b, b, c, b, c, b, c, b, c, c, b, c, c, b, b, c, b, c, b, c, b, c, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, c, b, b, c, b, c, c, c, b, c, c, b, b, c, b, c, b, c, b, c, c, b, b, c, b, c, b, c, b, c, b, c, c, b, c, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, c, c, b, c, b, c, b, c, c, b, c, b, b, c, b, c, b, c, b, c, b, c, b, c, c, b, b, c, b, c, b, c, b, c, b, c, c, c, b, c, b, b, b, c, b, c, b, c, c, c, b, c, b, c, b, c, b, b, c, c, b, c, b, c, c, b, c, b, b, c, b, c, b, c, b, c, c, c, b, c, b, b, c, b, c, b, c, b, c, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, c, b, c, c, b, c, b, b, c, b, c, b, c, c, b, c, b, c, b, c, b, b, c, b, c, b, c, c, c, b, c, b, c, b, b, c, b, c, b, c, c, c, b, c, b, c, b, b, c, b, b, c, c, b, c, c, c, b, c, b, b, c, b, b, c, c, b, c, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, c, b, c, b, c, b, c, b, b, c, b, c, c, b, c, c, b, c, b, c, b, b, c, b, c, b, c, c, c, b, c, b, c, b, b, c, b, c, b, c, c, b, c, c, b, c, b, b, c, b, b, c, c, b, c, c, c, b, c, b, b, c, b, b, c, c, b, c, c, b, c, c, b, b, c, b, b, c, b, c, c, c, b, c, b, c, b, c, b, b, c, b, c, c, b, c, c, b, c, b, c, b, c, b, b, c, b, c, c, b, c, b, c, c, b, c, b, c, b, b, c, b, c, b, c, c, c, b, c, b, c, b, b, c, b, c, b, c, c, b, c, c, b, c, b, c, b, b, c, b, c, c, c, c, b, c, b, b, c, b, b, b, c, c, c, c, b, c, c, b, b, c, b, b, b, c, c, c, b, c, c, b, c, b, c, b, b, c, b, c, b, c, c, b, c, c, b, c, b, b, c, b, c, b, c, b, c, c, b, c, b, c, c, b, c, b, b, c, b, c, b, c, c, b, c, c, b, c, b, b, c, b, b, c, c, c, b, c, c, b, c, b, b, c, b, b, c, c, c, b, c, c, b, c, b, b, c, b, b, c, c, b, c, c, b, c, c, b, b, c, b, c, b, c, b, c, b, c, c, b, c, b, c, b, c, b, b, c, b, c, c, c, b, c, b, c, b, c, b, b, c, b, c, c, b, c, c, b, c, b, c, b, b, c, b, c, b, c, c, b, c, c, b, b, c, b, c, b, c, b, c, b, c, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, c, b, c, c, b, b, c, b, c, b, b, c, c, b, c, c, c, b, b, c, b, b, c, b, c, b, c, c, c, b, c, b, c, b, b, c, b, c, b, c, c, c, b, c, b, c, b, b, c, b, c, b, c, c, b, c, c, b, c, b, b, c, b, c, b, c, b, c, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, c, b, c, b, c, c, b, b, c, b, c, b, c, b, c, c, c, b, c, b, b, c, b, b, c, b, c, c, c, c, b, c, b, b, c, b, b, c, b, c, c, c, b, c, b, c, b, c, b, b, c, b, c, c, b, c, c, b, c, b, c, b, b, c, b, c, b, c, c, b, c, c, b, c, b, c, b, b, c, b, c, b, c, c, b, c, c, b, c, b, b, c, b, c, b, c, b, c, c, c, b, c, b, b, c, b, c, b, c, b, c, c, c, b, b, c, b, c, b, c, b, b, c, c, c, b, c, b, c, b, c, b, c, b, b, c, c, b, c, b, c, c, b, c, b, c, b, b, c, b, c, b, c, c, c, b, c, b, c, b, b, c, b, b, c, c, b, c, c, c, b, c, b, b, c, b, b, c, c, b, c, c, c, b, c, b, b, c, b, b, c, c, b, c, c, b, c, b, c, b, c, b, b, c, c, b, c, b, c, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, c, b, c, b, c, b, b, c, b, c, c, b, c, c, b, c, b, c, b, b, c, b, c, b, c, c, c, b, c, b, c, b, b, c, b, b, c, c, c, c, b, c, b, c, b, b, c, b, c, b, c, c, b, c, c, b, c, b, b, c, b, c, b, c, b, c, c, b, c, b, c, b, c, b, c, b, b, c, c, b, c, c, b, c, c, b, b, c, b, b, c, c, b, c, b, c, c, c, b, b, c, b, b, c, b, c, c, b, c, c, b, c, b, c, b, c, b, b, c, b, c, c, b, c, b, c, c, b, c, b, b, c, b, c, b, c, c, b, c, c, b, c, b, b, c, b, c, b, c, b, c, c, c, b, c, b, b, c, b, b, c, b, c, c, c, b, c, c, b, b, c, b, b, c, b, c, c, b, c, c, c, b, b, c, b, b, c, b, c, c, b, c, c, b, c, b, c, b, b, c, b, c, b, c, c, b, c, b, c, c, b, b, c, b, c, b, c, b, c, b, c, c, b, c, c, b, c, b, b, c, b, c, b, c, c, b, c, c, b, c, b, b, c, b, b, c, c, b, c, c, c, b, c, b, b, c, b, b, c, c, b, c, c, b, c, c, b, b, c, b, b, c, c, b, c, c, b, c, c, b, b, c, b, c, b, c, b, c, b, c, c, b, c, b, c, b, c, b, b, c, b, c, c, b, c, c, b, c, b, c, b, b, c, b, c, b, c, c, c, b, c, b, c, b, b, c, b, c, b, c, c, b, c, c, b, c, b, b, c, b, c, b, c, b, c, c, b, c, b, c, c, b, b, c, b, c, b, c, b, c, c, b, c, c, b, b, c, b, c, b, b, c, c, b, c, c, c, b, b, c, b, b, c, b, c, b, c, c, c, b, c, b, c, b, b, c, b, c, b, c, c, c, b, c, b, c, b, b, c, b, c, b, c, c, b, c, c, b, b, c, b, c, b, c, b, c, b, c, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, b, c, c, b, c, c, b, b, c, b, b, c, b, c, c, c]
 const UMMALQURA_DAT = [28607]
-for(let i = 1; i < arr.length; i++) {
-  UMMALQURA_DAT.push(UMMALQURA_DAT[i - 1] + arr[i]);
+for (let i = 1; i < arr.length; i++) {
+  UMMALQURA_DAT.push(UMMALQURA_DAT[i - 1] + arr[i])
 }
 
 // const UMMALQURA_DAT = [28607, 28636, 28665, 28695, 28724, 28754, 28783, 28813, 28843, 28872, 28901, 28931, 28960, 28990, 29019, 29049, 29078, 29108, 29137, 29167,
@@ -97,7 +97,7 @@ for(let i = 1; i < arr.length; i++) {
 //   79990]
 
 const mfloor = Math.floor
-const n =  30.6001
+const n = 30.6001
 const v = 365.25
 const r = 1867216.25
 const u = 36524.25
@@ -176,7 +176,7 @@ function fromGregorian (pYear, pMonth, pDay) {
   // the MCJDN's of the start of the lunations in the Umm al-Qura calendar are stored in 'islamcalendar_dat.js'
 
   for (var i = 0; i < UMMALQURA_DAT.length; i++) {
-    if (UMMALQURA_DAT[i] > mcjdn) break;
+    if (UMMALQURA_DAT[i] > mcjdn) break
   }
 
   // compute and output the Umm al-Qura calendar date
@@ -190,7 +190,6 @@ function fromGregorian (pYear, pMonth, pDay) {
   return [iy, im, id]
 }
 
-
 function toGregorian (year, month, day) {
   var ii = year - 1
   var iln = (ii * 12) + 1 + (month - 1)
@@ -203,8 +202,8 @@ function toGregorian (year, month, day) {
 function monthLength (y, m) {
   let d = 28 // all months minimum has 28 days
   do {
-    let g = toGregorian(y, m, d)
-    let h = fromGregorian(g[0], g[1], g[2])
+    const g = toGregorian(y, m, d)
+    const h = fromGregorian(g[0], g[1], g[2])
     if (h[0] !== y || h[1] !== m) {
       return d - 1
     }
@@ -222,22 +221,22 @@ function fixDate (y, m, d) {
     m += 12
   }
 
-  while (d > monthLength(y, m )) {
-    d -= monthLength(y, m )
+  while (d > monthLength(y, m)) {
+    d -= monthLength(y, m)
     m = m < 11 ? m + 1 : 0
     y = m === 0 ? y + 1 : y
   }
   while (d <= 0) {
     m = m > 0 ? m - 1 : 11
     y = m === 11 ? y - 1 : y
-    d += monthLength(y, m )
+    d += monthLength(y, m)
   }
   return [y, m, d]
 }
 
 const monthNames = ['Muharram', 'Safar', 'Rabi al-Awwal', 'Rabi al-Thani', 'Jumada al-Ula', 'Jumada al-Akhirah', 'Rajab', 'Sha\'ban', 'Ramadan', 'Shawwal', 'Zulqiddah', 'Zulhijjah']
 const weekDayNames = ['al-Aḥad', 'al-Ithnayn', 'ath-Thulāthā’', 'al-Arba‘ā’', 'al-Khamīs', 'al-Jumu\'ah', 'as-Sabt']
-const startOfWeekOffset = 0;
+const startOfWeekOffset = 0
 
 export default {
   fromGregorian,
@@ -246,5 +245,5 @@ export default {
   fixDate,
   monthNames,
   weekDayNames,
-  startOfWeekOffset,
+  startOfWeekOffset
 }

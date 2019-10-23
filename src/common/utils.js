@@ -1,4 +1,4 @@
-export function dateInstanceCreator(toGregorian, fixDate, ...args) {
+export function dateInstanceCreator (toGregorian, fixDate, ...args) {
   if (args.length === 0) {
     return new Date()
   } else if (args.length === 1) {
@@ -18,14 +18,14 @@ export function dateInstanceCreator(toGregorian, fixDate, ...args) {
   return new Date(...params)
 }
 
-export function fromDateInstance(dateInstance, fromGregorian) {
-  return fromGregorian(dateInstance.getFullYear(), dateInstance.getMonth(), dateInstance.getDate());
+export function fromDateInstance (dateInstance, fromGregorian) {
+  return fromGregorian(dateInstance.getFullYear(), dateInstance.getMonth(), dateInstance.getDate())
 }
 
-export function updateDateInstance(dateInstance, y, m, d) {
-  dateInstance.setFullYear(y);
-  dateInstance.setMonth(m);
-  dateInstance.setDate(d);
+export function updateDateInstance (dateInstance, y, m, d) {
+  dateInstance.setFullYear(y)
+  dateInstance.setMonth(m)
+  dateInstance.setDate(d)
 }
 
 export const getterMethods = [
@@ -51,7 +51,7 @@ export const getterMethods = [
   'toTimeString',
   'toUTCString',
   'UTC',
-  'valueOf',
+  'valueOf'
 ]
 export const setterMethods = [
   'setHours',
@@ -65,19 +65,18 @@ export const setterMethods = [
   'setUTCMilliseconds',
   'setUTCMinutes',
   'setUTCMonth',
-  'setUTCSeconds',
+  'setUTCSeconds'
 ]
-
 
 // orders is important. parent will use the index of methods
 export const overridingSetterMethods = [
   'setFullYear',
   'setMonth',
-  'setDate',
+  'setDate'
 ]
 
 export const overridingGetterMethods = [
   'getFullYear',
   'getMonth',
-  'getDate',
+  'getDate'
 ]
