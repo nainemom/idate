@@ -1,16 +1,11 @@
 const a = 28
 const b = 29
 const c = 30
-const sort = [0,b,b,c,b,c,b,c,c,b,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,c,c,b,c,b,b,c,b,b,c,c,b,c,c,c,b,c,b,b,c,b,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,c,b,c,b,c,b,c,a,c,c,c,b,c,b,c,b,c,b,c,b,c,b,c,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,c,b,c,b,c,b,c,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,c,b,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,c,b,b,c,c,c,b,c,b,c,b,c,b,b,c,c,b,b,c,b,b,c,c,c,b,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,c,b,c,b,c,b,c,b,c,b,c,b,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,c,b,c,c,b,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,b,c,b,c,c,c,b,c,c,b,b,c,b,c,b,c,b,c,c,b,b,c,b,c,b,c,b,c,b,c,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,c,b,c,b,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,b,c,b,c,c,b,b,c,b,c,b,c,b,c,b,c,c,c,b,c,b,b,b,c,b,c,b,c,c,c,b,c,b,c,b,c,b,b,c,c,b,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,c,c,b,c,b,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,c,b,c,c,b,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,b,c,c,b,c,c,c,b,c,b,b,c,b,b,c,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,b,c,b,c,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,b,c,c,b,c,c,c,b,c,b,b,c,b,b,c,c,b,c,c,b,c,c,b,b,c,b,b,c,b,c,c,c,b,c,b,c,b,c,b,b,c,b,c,c,b,c,c,b,c,b,c,b,c,b,b,c,b,c,c,b,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,c,b,b,c,b,c,c,c,c,b,c,b,b,c,b,b,b,c,c,c,c,b,c,c,b,b,c,b,b,b,c,c,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,c,b,c,b,c,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,b,c,c,c,b,c,c,b,c,b,b,c,b,b,c,c,c,b,c,c,b,c,b,b,c,b,b,c,c,b,c,c,b,c,c,b,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,b,c,b,c,c,c,b,c,b,c,b,c,b,b,c,b,c,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,c,b,b,c,b,c,b,b,c,c,b,c,c,c,b,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,c,b,b,c,b,c,b,c,b,c,c,c,b,c,b,b,c,b,b,c,b,c,c,c,c,b,c,b,b,c,b,b,c,b,c,c,c,b,c,b,c,b,c,b,b,c,b,c,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,c,c,b,c,b,b,c,b,c,b,c,b,c,c,c,b,b,c,b,c,b,c,b,b,c,c,c,b,c,b,c,b,c,b,c,b,b,c,c,b,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,b,c,c,b,c,c,c,b,c,b,b,c,b,b,c,c,b,c,c,c,b,c,b,b,c,b,b,c,c,b,c,c,b,c,b,c,b,c,b,b,c,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,b,c,b,c,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,b,c,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,b,c,c,b,c,c,b,c,c,b,b,c,b,b,c,c,b,c,b,c,c,c,b,b,c,b,b,c,b,c,c,b,c,c,b,c,b,c,b,c,b,b,c,b,c,c,b,c,b,c,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,c,c,b,c,b,b,c,b,b,c,b,c,c,c,b,c,c,b,b,c,b,b,c,b,c,c,b,c,c,c,b,b,c,b,b,c,b,c,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,b,c,c,b,b,c,b,c,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,b,c,c,b,c,c,c,b,c,b,b,c,b,b,c,c,b,c,c,b,c,c,b,b,c,b,b,c,c,b,c,c,b,c,c,b,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,b,c,b,c,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,c,b,c,b,c,c,b,b,c,b,c,b,c,b,c,c,b,c,c,b,b,c,b,c,b,b,c,c,b,c,c,c,b,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,c,b,b,c,b,b,c,b,c,c,c]
-const UMMALQURA_DAT = []
-sort.forEach((val, i) => {
-  if (i === 0) {
-    UMMALQURA_DAT.push(28607)
-  } else {
-    UMMALQURA_DAT.push(UMMALQURA_DAT[i - 1] + val)
-  }
-})
-
+const arr = [0,b,b,c,b,c,b,c,c,b,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,c,c,b,c,b,b,c,b,b,c,c,b,c,c,c,b,c,b,b,c,b,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,c,b,c,b,c,b,c,a,c,c,c,b,c,b,c,b,c,b,c,b,c,b,c,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,c,b,c,b,c,b,c,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,c,b,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,c,b,b,c,c,c,b,c,b,c,b,c,b,b,c,c,b,b,c,b,b,c,c,c,b,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,c,b,c,b,c,b,c,b,c,b,c,b,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,c,b,c,c,b,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,b,c,b,c,c,c,b,c,c,b,b,c,b,c,b,c,b,c,c,b,b,c,b,c,b,c,b,c,b,c,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,c,b,c,b,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,b,c,b,c,c,b,b,c,b,c,b,c,b,c,b,c,c,c,b,c,b,b,b,c,b,c,b,c,c,c,b,c,b,c,b,c,b,b,c,c,b,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,c,c,b,c,b,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,c,b,c,c,b,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,b,c,c,b,c,c,c,b,c,b,b,c,b,b,c,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,b,c,b,c,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,b,c,c,b,c,c,c,b,c,b,b,c,b,b,c,c,b,c,c,b,c,c,b,b,c,b,b,c,b,c,c,c,b,c,b,c,b,c,b,b,c,b,c,c,b,c,c,b,c,b,c,b,c,b,b,c,b,c,c,b,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,c,b,b,c,b,c,c,c,c,b,c,b,b,c,b,b,b,c,c,c,c,b,c,c,b,b,c,b,b,b,c,c,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,c,b,c,b,c,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,b,c,c,c,b,c,c,b,c,b,b,c,b,b,c,c,c,b,c,c,b,c,b,b,c,b,b,c,c,b,c,c,b,c,c,b,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,b,c,b,c,c,c,b,c,b,c,b,c,b,b,c,b,c,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,c,b,b,c,b,c,b,b,c,c,b,c,c,c,b,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,c,b,b,c,b,c,b,c,b,c,c,c,b,c,b,b,c,b,b,c,b,c,c,c,c,b,c,b,b,c,b,b,c,b,c,c,c,b,c,b,c,b,c,b,b,c,b,c,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,c,c,b,c,b,b,c,b,c,b,c,b,c,c,c,b,b,c,b,c,b,c,b,b,c,c,c,b,c,b,c,b,c,b,c,b,b,c,c,b,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,b,c,c,b,c,c,c,b,c,b,b,c,b,b,c,c,b,c,c,c,b,c,b,b,c,b,b,c,c,b,c,c,b,c,b,c,b,c,b,b,c,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,b,c,b,c,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,b,c,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,b,c,c,b,c,c,b,c,c,b,b,c,b,b,c,c,b,c,b,c,c,c,b,b,c,b,b,c,b,c,c,b,c,c,b,c,b,c,b,c,b,b,c,b,c,c,b,c,b,c,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,c,c,b,c,b,b,c,b,b,c,b,c,c,c,b,c,c,b,b,c,b,b,c,b,c,c,b,c,c,c,b,b,c,b,b,c,b,c,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,b,c,c,b,b,c,b,c,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,b,c,c,b,c,c,c,b,c,b,b,c,b,b,c,c,b,c,c,b,c,c,b,b,c,b,b,c,c,b,c,c,b,c,c,b,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,b,c,b,c,c,b,c,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,c,b,b,c,b,c,b,c,b,c,c,b,c,b,c,c,b,b,c,b,c,b,c,b,c,c,b,c,c,b,b,c,b,c,b,b,c,c,b,c,c,c,b,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,c,b,c,b,c,b,b,c,b,c,b,c,c,b,c,c,b,b,c,b,c,b,c,b,c,b,c,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,b,c,c,b,c,c,b,b,c,b,b,c,b,c,c,c]
+const UMMALQURA_DAT = [28607]
+for(let i = 1; i < arr.length; i++) {
+  UMMALQURA_DAT.push(UMMALQURA_DAT[i - 1] + arr[i]);
+}
 
 // const UMMALQURA_DAT = [28607, 28636, 28665, 28695, 28724, 28754, 28783, 28813, 28843, 28872, 28901, 28931, 28960, 28990, 29019, 29049, 29078, 29108, 29137, 29167,
 //   29196, 29226, 29255, 29285, 29315, 29345, 29375, 29404, 29434, 29463, 29492, 29522, 29551, 29580, 29610, 29640, 29669, 29699, 29729, 29759,
@@ -102,19 +97,28 @@ sort.forEach((val, i) => {
 //   79990]
 
 const mfloor = Math.floor
+const n =  30.6001
+const v = 365.25
+const r = 1867216.25
+const u = 36524.25
+const x = 2400000
+const w = 1524
+const o = 4716
+const p = 16260
+const q = 122.1
 
 function julianToGregorian (julianDate) {
   // source from: http://keith-wood.name/calendars.html
   var z = mfloor(julianDate + 0.5)
-  var a = mfloor((z - 1867216.25) / 36524.25)
+  var a = mfloor((z - r) / u)
   a = z + 1 + a - mfloor(a / 4)
-  var b = a + 1524
-  var c = mfloor((b - 122.1) / 365.25)
-  var d = mfloor(365.25 * c)
-  var e = mfloor((b - d) / 30.6001)
-  var day = b - d - mfloor(e * 30.6001)
+  var b = a + w
+  var c = mfloor((b - q) / v)
+  var d = mfloor(v * c)
+  var e = mfloor((b - d) / n)
+  var day = b - d - mfloor(e * n)
   var month = e - (e > 13.5 ? 13 : 1)
-  var year = c - (month > 2.5 ? 4716 : 4715)
+  var year = c - (month > 2.5 ? o : 4715)
   if (year <= 0) {
     year--
   }// No year zero
@@ -147,15 +151,15 @@ function fromGregorian (pYear, pMonth, pDay) {
 
   // compute Chronological Julian Day Number (CJDN)
 
-  var cjdn = mfloor(365.25 * (y + 4716)) + mfloor(30.6001 * (m + 1)) + day - jgc - 1524
+  var cjdn = mfloor(v * (y + o)) + mfloor(n * (m + 1)) + day - jgc - w
 
-  a = mfloor((cjdn - 1867216.25) / 36524.25)
+  a = mfloor((cjdn - r) / u)
   jgc = a - mfloor(a / 4.0) + 1
-  var b = cjdn + jgc + 1524
-  var c = mfloor((b - 122.1) / 365.25)
-  var d = mfloor(365.25 * c)
-  month = mfloor((b - d) / 30.6001)
-  day = (b - d) - mfloor(30.6001 * month)
+  var b = cjdn + jgc + w
+  var c = mfloor((b - q) / v)
+  var d = mfloor(v * c)
+  month = mfloor((b - d) / n)
+  day = (b - d) - mfloor(n * month)
 
   if (month > 13) {
     c += 1
@@ -163,11 +167,11 @@ function fromGregorian (pYear, pMonth, pDay) {
   }
 
   month -= 1
-  year = c - 4716
+  year = c - o
 
   // compute Modified Chronological Julian Day Number (MCJDN)
 
-  var mcjdn = cjdn - 2400000
+  var mcjdn = cjdn - x
 
   // the MCJDN's of the start of the lunations in the Umm al-Qura calendar are stored in 'islamcalendar_dat.js'
 
@@ -177,7 +181,7 @@ function fromGregorian (pYear, pMonth, pDay) {
 
   // compute and output the Umm al-Qura calendar date
 
-  var iln = i + 16260
+  var iln = i + p
   var ii = mfloor((iln - 1) / 12)
   var iy = ii + 1
   var im = iln - 12 * ii
@@ -190,9 +194,9 @@ function fromGregorian (pYear, pMonth, pDay) {
 function toGregorian (year, month, day) {
   var ii = year - 1
   var iln = (ii * 12) + 1 + (month - 1)
-  var i = iln - 16260
+  var i = iln - p
   var mcjdn = day + UMMALQURA_DAT[i - 1] - 1
-  var cjdn = mcjdn + 2400000
+  var cjdn = mcjdn + x
   return julianToGregorian(cjdn)
 }
 
