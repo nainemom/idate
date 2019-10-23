@@ -1,5 +1,5 @@
 const assert = require('assert')
-const IDate = require('../dist/idate.js')
+const IDate = require('../dist/jalali.js')
 
 describe('IDate', () => {
   it('should support date object as argument', () => {
