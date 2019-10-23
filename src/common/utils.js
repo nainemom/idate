@@ -4,7 +4,11 @@ export function dateInstanceCreator (toGregorian, fixDate, ...args) {
   } else if (args.length === 1) {
     return new Date(args[0] instanceof Date ? args[0].getTime() : args[0])
   }
-  const fixed = fixDate(args[0], args[1] || 0, args[2] || 1)
+
+  const fixedParams = [0, 0, 1].map((defaultValue, index) => {
+    return typeof args[index] === 'undefined' ? defaultValue : args[index]
+  })
+  const fixed = fixDate(...fixedParams)
   const converted = toGregorian(fixed[0], fixed[1], fixed[2])
   const params = [
     converted[0],
