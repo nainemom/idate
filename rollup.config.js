@@ -21,7 +21,6 @@ function configCreator (input, output) {
           toplevel: true
         },
         compress: {
-          drop_console: true,
           toplevel: true,
           unsafe_math: true,
           unsafe_undefined: true
