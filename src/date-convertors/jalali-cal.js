@@ -50,9 +50,46 @@ function monthLength(year, month) {
   return 30;
 }
 
+function fixDate (year, month, date) {
+  let fixedYear = year
+  let fixedMonth = month
+  let fixedDate = date
+
+  while (fixedMonth > 11) {
+    fixedYear += 1
+    fixedMonth -= 12
+  }
+  while (fixedMonth < 0) {
+    fixedYear -= 1
+    fixedMonth += 12
+  }
+
+  while (fixedDate > monthLength(fixedYear, fixedMonth)) {
+    fixedDate -= monthLength(fixedYear, fixedMonth)
+    fixedMonth = fixedMonth + 1
+    if (fixedMonth > 11) {
+      fixedYear = fixedYear + 1
+      fixedMonth = 0
+    }
+  }
+  while (fixedDate < 1) {
+    fixedMonth = fixedMonth - 1
+    if (fixedMonth < 0) {
+      fixedYear = fixedYear - 1
+      fixedMonth = 11
+    }
+    fixedDate += monthLength(fixedYear, fixedMonth)
+  }
+
+  return [fixedYear, fixedMonth, fixedDate]
+}
+
+
 function toTimestamp(year, month, date) {
   // 1348/9/11 is start 0, we start from 1348/0/1 and minus 257 days from response at the end
-  let days = 0;
+  // 286 is offset of start of year 1348 (that we start calcs from) till 1970/0/1
+  
+  let days = -286;
   for(let i = 1348; i < year; i += 1) {
     days += yearLength(i);
   }
@@ -61,20 +98,44 @@ function toTimestamp(year, month, date) {
     days += monthLength(year, i);
   }
   days += (date - 1);
-  // 286 is offset of start of year 1348 (that we start calcs from) till 1970/0/1
-  days -= 286;
   // 86400000 is one day miliseconds
   return days * 86400000;
 }
 
 
-const dt = new Date(2019, 9, 26);
-dt.setUTCHours(0);
-dt.setUTCMinutes(0);
-dt.setUTCSeconds(0);
-dt.setUTCMilliseconds(0);
-dt.setUTCDate(26);
+function fromTimestamp(timestamp) {
+  const daysLength = Math.floor(timestamp / 86400000);
+  return fixDate(1348, 9, 11 + daysLength)
 
-const dti = toTimestamp(1398, 7, 4);
+}
 
-console.log(dt.getTime() / 86400000, dti / 86400000);
+
+function check(enDate, faDate) {
+  const dt = new Date();
+  dt.setUTCHours(0);
+  dt.setUTCMinutes(0);
+  dt.setUTCSeconds(0);
+  dt.setUTCMilliseconds(0);
+  dt.setUTCFullYear(enDate[0]);
+  dt.setUTCMonth(enDate[1]);
+  dt.setUTCDate(enDate[2]);
+  const enDt = dt.getTime()
+  const faDt = toTimestamp(...faDate)
+  console.log(enDt, faDt, fromTimestamp(enDt), enDt === faDt)
+}
+
+
+check(
+  [2019, 9, 26],
+  [1398, 7, 4],
+)
+
+check(
+  [1970, 0, 1],
+  [1348, 9, 11],
+)
+
+check(
+  [1969, 11, 30],
+  [1348, 9, 9],
+)
