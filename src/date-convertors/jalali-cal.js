@@ -50,7 +50,64 @@ function monthLength(year, month) {
   return 30;
 }
 
-function fixDate (year, month, date) {
+function fixDate (year, month, date, hour = 0, minute = 0, second = 0, milisecond = 0) {
+  let indexes = [
+    'milisecond',
+    'second',
+    'minute',
+    'hour',
+    'date',
+    'month',
+    'year',
+  ]
+  let ret = [
+    milisecond,
+    second,
+    minute,
+    hour,
+    date,
+    month,
+    year,
+  ]
+
+  const minMax = (index, state) => {
+    const name = indexes[index]
+    if (name === 'milisecond') {
+      return [0, 999];
+    }
+    if (['minute', 'second'].includes(name)) {
+      return [0, 59];
+    }
+    if (name === 'hour') {
+      return [0, 23];
+    }
+    if (name === 'date') {
+      return [
+        1,
+        monthLength(
+          state[indexes.indexOf('year')],
+          state[indexes.indexOf('month')]
+        )
+      ];
+    }
+    if (name === 'month') {
+      return [0, 11]
+    }
+    return [-Infinity, +Infinity];
+  }
+
+  ret.forEach((val, index) => {
+    const [min, max] = minMax(index, ret);
+    if (min === -Infinity || max === Infinity) {
+      return
+    }
+    const offset = Math.floor(val / (max + 1));
+    ret[index + 1] += offset
+    ret[index] -= offset * (max + 1)
+  })
+
+  return ret.reverse()
+  
   let fixedYear = year
   let fixedMonth = month
   let fixedDate = date
@@ -104,8 +161,8 @@ function toTimestamp(year, month, date) {
 
 
 function fromTimestamp(timestamp) {
-  const daysLength = Math.floor(timestamp / 86400000);
-  return fixDate(1348, 9, 11 + daysLength)
+  // const daysLength = Math.floor(timestamp / 86400000);
+  return fixDate(1348, 9, 11, 0, 0, 0, timestamp)
 
 }
 
@@ -121,21 +178,32 @@ function check(enDate, faDate) {
   dt.setUTCDate(enDate[2]);
   const enDt = dt.getTime()
   const faDt = toTimestamp(...faDate)
-  console.log(enDt, faDt, fromTimestamp(enDt), enDt === faDt)
+  console.log(enDt, faDt, faDate, fromTimestamp(enDt), enDt === faDt)
 }
 
 
-check(
-  [2019, 9, 26],
-  [1398, 7, 4],
-)
+// console.log(fixDate(
+//   1398,
+//   6,
+//   31,
+// ))
+// return
+// check(
+//   [2019, 9, 26],
+//   [1398, 7, 4],
+// )
 
-check(
-  [1970, 0, 1],
-  [1348, 9, 11],
-)
+// // check(
+// //   [1970, 0, 1],
+// //   [1348, 9, 11],
+// // )
 
-check(
-  [1969, 11, 30],
-  [1348, 9, 9],
-)
+// check(
+//   [1969, 11, 30],
+//   [1348, 9, 9],
+// )
+
+
+const ts = toTimestamp(1348, 9, 1)
+const dt = fromTimestamp(ts);
+console.log(dt)
