@@ -1,4 +1,4 @@
-function isLeap(year) {
+function isLeap (year) {
   // calculation source: https://fa.wikipedia.org/wiki/%D8%B3%D8%A7%D9%84_%DA%A9%D8%A8%DB%8C%D8%B3%D9%87
   const list = [
     0,
@@ -31,157 +31,113 @@ function isLeap(year) {
     111,
     115,
     year > 473 ? 119 : 120,
-    124,
-  ];
-  return list.includes(year % 128);
+    124
+  ]
+  return list.includes(year % 128)
 }
 
-function yearLength(year) {
-  return isLeap(year) ? 366 : 365;
+function yearLength (year) {
+  return isLeap(year) ? 366 : 365
 }
 
-function monthLength(year, month) {
+function monthLength (year, month) {
   if (month < 6) {
-    return 31;
+    return 31
   }
   if (month === 11 && !isLeap(year)) {
-    return 29;
+    return 29
   }
-  return 30;
+  return 30
 }
 
 function fixDate (year, month, date, hour = 0, minute = 0, second = 0, milisecond = 0) {
-  let indexes = [
+  const indexes = [
     'milisecond',
     'second',
     'minute',
     'hour',
     'date',
     'month',
-    'year',
+    'year'
   ]
-  let ret = [
+  const ret = [
     milisecond,
     second,
     minute,
     hour,
     date,
     month,
-    year,
+    year
+  ]
+  const max = [
+    1000,
+    60,
+    60,
+    24
   ]
 
-  const minMax = (index, state) => {
-    const name = indexes[index]
-    if (name === 'milisecond') {
-      return [0, 999];
-    }
-    if (['minute', 'second'].includes(name)) {
-      return [0, 59];
-    }
-    if (name === 'hour') {
-      return [0, 23];
-    }
-    if (name === 'date') {
-      return [
-        1,
-        monthLength(
-          state[indexes.indexOf('year')],
-          state[indexes.indexOf('month')]
-        )
-      ];
-    }
-    if (name === 'month') {
-      return [0, 11]
-    }
-    return [-Infinity, +Infinity];
-  }
-
   ret.forEach((val, index) => {
-    const [min, max] = minMax(index, ret);
-    if (min === -Infinity || max === Infinity) {
-      return
+    if (['year', 'month', 'date'].includes(indexes[index])) {
+      let d = ret[indexes.indexOf('date')]
+      let m = ret[indexes.indexOf('month')]
+      let y = ret[indexes.indexOf('year')]
+      const monthOffset = Math.floor(m / 12)
+      y += monthOffset
+      m -= monthOffset * 12
+
+      while (d > monthLength(y, m)) {
+        d -= monthLength(y, m)
+        m = m < 11 ? m + 1 : 0
+        y = m === 0 ? y + 1 : y
+      }
+      while (d <= 0) {
+        m = m > 0 ? m - 1 : 11
+        y = m === 11 ? y - 1 : y
+        d += monthLength(y, m)
+      }
+      ret[indexes.indexOf('date')] = d
+      ret[indexes.indexOf('month')] = m
+      ret[indexes.indexOf('year')] = y
+    } else {
+      const offset = Math.floor(val / (max[index]))
+      ret[index + 1] += offset
+      ret[index] -= offset * (max[index])
     }
-    const offset = Math.floor(val / (max + 1));
-    ret[index + 1] += offset
-    ret[index] -= offset * (max + 1)
   })
-
   return ret.reverse()
-  
-  let fixedYear = year
-  let fixedMonth = month
-  let fixedDate = date
-
-  while (fixedMonth > 11) {
-    fixedYear += 1
-    fixedMonth -= 12
-  }
-  while (fixedMonth < 0) {
-    fixedYear -= 1
-    fixedMonth += 12
-  }
-
-  while (fixedDate > monthLength(fixedYear, fixedMonth)) {
-    fixedDate -= monthLength(fixedYear, fixedMonth)
-    fixedMonth = fixedMonth + 1
-    if (fixedMonth > 11) {
-      fixedYear = fixedYear + 1
-      fixedMonth = 0
-    }
-  }
-  while (fixedDate < 1) {
-    fixedMonth = fixedMonth - 1
-    if (fixedMonth < 0) {
-      fixedYear = fixedYear - 1
-      fixedMonth = 11
-    }
-    fixedDate += monthLength(fixedYear, fixedMonth)
-  }
-
-  return [fixedYear, fixedMonth, fixedDate]
 }
 
-
-function toTimestamp(year, month, date) {
+function toTimestamp (year, month, date, hour = 0, minute = 0, second = 0, milisecond = 0) {
   // 1348/9/11 is start 0, we start from 1348/0/1 and minus 257 days from response at the end
   // 286 is offset of start of year 1348 (that we start calcs from) till 1970/0/1
-  
-  let days = -286;
-  for(let i = 1348; i < year; i += 1) {
-    days += yearLength(i);
+  let days = -286
+  for (let i = 1348; i < year; i += 1) {
+    days += yearLength(i)
   }
-
-  for(let i = 0; i < month; i += 1) {
-    days += monthLength(year, i);
+  for (let i = 0; i < month; i += 1) {
+    days += monthLength(year, i)
   }
-  days += (date - 1);
-  // 86400000 is one day miliseconds
-  return days * 86400000;
+  days += (date - 1)
+  return (days * 86400000) + (milisecond + (second * 1000) + (minute * 60000) + (hour * 3600000))
 }
 
-
-function fromTimestamp(timestamp) {
-  // const daysLength = Math.floor(timestamp / 86400000);
+function fromTimestamp (timestamp) {
   return fixDate(1348, 9, 11, 0, 0, 0, timestamp)
-
 }
 
-
-function check(enDate, faDate) {
-  const dt = new Date();
-  dt.setUTCHours(0);
-  dt.setUTCMinutes(0);
-  dt.setUTCSeconds(0);
-  dt.setUTCMilliseconds(0);
-  dt.setUTCFullYear(enDate[0]);
-  dt.setUTCMonth(enDate[1]);
-  dt.setUTCDate(enDate[2]);
+function check (enDate, faDate) {
+  const dt = new Date()
+  dt.setUTCHours(0)
+  dt.setUTCMinutes(0)
+  dt.setUTCSeconds(0)
+  dt.setUTCMilliseconds(0)
+  dt.setUTCFullYear(enDate[0])
+  dt.setUTCMonth(enDate[1])
+  dt.setUTCDate(enDate[2])
   const enDt = dt.getTime()
   const faDt = toTimestamp(...faDate)
   console.log(enDt, faDt, faDate, fromTimestamp(enDt), enDt === faDt)
 }
-
-
 // console.log(fixDate(
 //   1398,
 //   6,
@@ -203,7 +159,7 @@ function check(enDate, faDate) {
 //   [1348, 9, 9],
 // )
 
-
-const ts = toTimestamp(1348, 9, 1)
-const dt = fromTimestamp(ts);
+// const ts = toTimestamp(1398, 11, 25)
+// const dt = fromTimestamp(ts);
+const dt = fromTimestamp(Date.now())
 console.log(dt)
