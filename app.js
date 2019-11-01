@@ -16,3 +16,5 @@ const HijriDate = IDate(HijriCalendar)
 
 console.log(new JalaliDate().toString())
 console.log(new HijriDate().toString())
+console.log(new Date().toString())
+
