@@ -31,6 +31,7 @@ function configCreator (input, output) {
 }
 export default [
   configCreator('src/index.js', 'dist/index.js'),
+  configCreator('src/idate.js', 'dist/idate.js'),
   configCreator('src/jalali.js', 'dist/jalali.js'),
   configCreator('src/hijri.js', 'dist/hijri.js')
 ]
