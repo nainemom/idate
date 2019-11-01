@@ -1,4 +1,4 @@
-import DateLib from './common/date'
-import hijriDateConvertor from './date-convertors/hijri'
-
-export default DateLib(hijriDateConvertor)
+export default function () {
+  return 2
+}
+// export default import('./date-modules/hijri')
