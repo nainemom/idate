@@ -1,6 +1,7 @@
 const assert = require('assert')
-const JalaliDate = require('../dist/jalali.js')
-const HijriDate = require('../dist/hijri.js')
+const IDate = require('../dist/idate.js')
+const JalaliDate = IDate(require('../dist/jalali.js'))
+const HijriDate = IDate(require('../dist/hijri.js'))
 
 describe('Dates', () => {
   describe('should support date object as argument and truly convert', () => {
@@ -12,6 +13,7 @@ describe('Dates', () => {
     list.forEach(i => {
       it(i[0], () => {
         const date = new i[1](baseDate)
+        console.log(date.getFullYear(), date.getMonth(), date.getDate())
         assert.strictEqual(date.getFullYear(), i[2][0])
         assert.strictEqual(date.getMonth(), i[2][1])
         assert.strictEqual(date.getDate(), i[2][2])
