@@ -14,6 +14,5 @@ const HijriDate = IDate(HijriCalendar)
 // console.log(dt2.toString())
 // console.log(dt2.di.toString())
 
-
 console.log(new JalaliDate().toString())
 console.log(new HijriDate().toString())
