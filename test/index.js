@@ -13,7 +13,6 @@ describe('Dates', () => {
     list.forEach(i => {
       it(i[0], () => {
         const date = new i[1](baseDate)
-        console.log(date.getFullYear(), date.getMonth(), date.getDate())
         assert.strictEqual(date.getFullYear(), i[2][0])
         assert.strictEqual(date.getMonth(), i[2][1])
         assert.strictEqual(date.getDate(), i[2][2])
@@ -23,7 +22,7 @@ describe('Dates', () => {
 
   describe('should act like native js Date on setDate ', () => {
     const baseTS = 1553470566470
-    const ofsetDays = 4 // 2536
+    const ofsetDays = 1 // 2536
     const list = [
       ['JalaliDate', JalaliDate],
       ['HijriDate', HijriDate]
@@ -32,9 +31,12 @@ describe('Dates', () => {
       it(i[0], () => {
         const baseDate = new Date(baseTS)
         const date = new i[1](baseTS)
+        console.warn('before setDate', baseDate.toDateString(), date.toDateString())
+        console.warn('before setDate', baseDate.toISOString(), date.toISOString())
         baseDate.setDate(baseDate.getDate() + ofsetDays)
         date.setDate(date.getDate() + ofsetDays)
-        console.warn(baseDate.toISOString(), date.toISOString())
+        console.warn('after setDate', baseDate.toDateString(), date.toDateString())
+        console.warn('after setDate', baseDate.toISOString(), date.toISOString())
         assert.strictEqual(baseDate.toISOString(), date.toISOString())
       })
     })
