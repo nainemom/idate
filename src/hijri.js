@@ -121,6 +121,6 @@ export default class {
   }
 
   fromTimestamp (timestamp) {
-    return this.fixDate(1389, 9, 22, 0, 0, 0, timestamp)
+    return this.fixDate(1389, 9, 22, 3, 30, 0, timestamp)
   }
 }
