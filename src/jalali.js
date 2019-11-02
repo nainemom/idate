@@ -125,7 +125,8 @@ export default class {
       days += this.monthLength(year, i)
     }
     days += (date - 1)
-    return (days * 86400000) + (milisecond + (second * 1000) + (minute * 60000) + (hour * 3600000))
+    const ts = (days * 86400000) + (milisecond + (second * 1000) + (minute * 60000) + (hour * 3600000))
+    return ts - 12600000 // 12600000 is iran timezone offset at zero ts
   }
 
   fromTimestamp (timestamp) {
