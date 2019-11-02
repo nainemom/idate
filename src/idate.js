@@ -30,7 +30,7 @@ export default function (CalendarModule, data = undefined) {
       const dateSetters = ['setFullYear', 'setMonth', 'setDate', 'setHours', 'setMinutes', 'setSeconds', 'setMiliseconds']
       dateSetters.forEach((method, index) => {
         this[method] = function (arg) {
-          const date = calendar.fromTimestamp(this.timestamp)
+          const date = calendar.fromTimestamp(this.timestamp + this.timezoneOffset)
           date[index] = arg
           this.timestamp = calendar.toTimestamp(...calendar.fixDate(...date))
           return this.timestamp
