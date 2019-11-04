@@ -17,7 +17,7 @@ export default function (CalendarModule, data = undefined) {
           return typeof args[index] === 'undefined' ? defaultValue : args[index]
         })
         const fixed = calendar.fixDate(...fixedParams)
-        return calendar.toTimestamp(...fixed) + this.timezoneOffset
+        return calendar.toTimestamp(...fixed) // + this.timezoneOffset
       })()
 
       const dateGetters = ['getFullYear', 'getMonth', 'getDate', 'getHours', 'getMinutes', 'getSeconds', 'getMiliseconds']
@@ -30,8 +30,10 @@ export default function (CalendarModule, data = undefined) {
       const dateSetters = ['setFullYear', 'setMonth', 'setDate', 'setHours', 'setMinutes', 'setSeconds', 'setMiliseconds']
       dateSetters.forEach((method, index) => {
         this[method] = function (arg) {
-          const date = calendar.fromTimestamp(this.timestamp + this.timezoneOffset)
+          const date = calendar.fromTimestamp(this.timestamp)
+          console.log(date)
           date[index] = arg
+          console.log('after', date)
           this.timestamp = calendar.toTimestamp(...calendar.fixDate(...date))
           return this.timestamp
         }
