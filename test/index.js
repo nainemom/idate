@@ -31,11 +31,11 @@ describe('Dates', () => {
       it(i[0], () => {
         const baseDate = new Date(baseTS)
         const date = new i[1](baseTS)
-        console.warn('before setDate', baseDate.toDateString(), baseDate.toISOString())
+        // console.warn('before setDate', baseDate.toDateString(), baseDate.toISOString())
         console.warn('before setDate', date.toDateString(), date.toISOString())
         baseDate.setDate(baseDate.getDate() + ofsetDays)
         date.setDate(date.getDate() + ofsetDays)
-        console.warn('after setDate', baseDate.toDateString(), baseDate.toISOString())
+        // console.warn('after setDate', baseDate.toDateString(), baseDate.toISOString())
         console.warn('after setDate', date.toDateString(), date.toISOString())
         assert.strictEqual(baseDate.toISOString(), date.toISOString())
       })
