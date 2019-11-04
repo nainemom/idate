@@ -109,7 +109,8 @@ export default class {
   toTimestamp (year, month, date, hour = 0, minute = 0, second = 0, milisecond = 0) {
     // 1389/9/22 is start 0, we start from 1389/0/1 and minus 257 days from response at the end
     // 286 is offset of start of year 1389 (that we start calcs from) till 1970/0/1
-    let days = -287
+    let days = -257
+    days -= 602 // idk
     for (let i = 1389; i < year; i += 1) {
       days += this.yearLength(i)
     }
