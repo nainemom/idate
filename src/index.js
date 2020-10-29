@@ -62,7 +62,7 @@ export default class IDate extends Date {
         args[0],
         args[1] || 0,
         typeof args[2] === 'undefined' ? 1 : args[2])
-      const converted = toGregorian(fixed[0], fixed[1] + 1, fixed[2])
+      const converted = toGregorian(fixed[0], fixed[1], fixed[2])
       date = [converted.gy, converted.gm - 1, converted.gd].concat([args[3] || 0, args[4] || 0, args[5] || 0, args[6] || 0])
     }
 
@@ -73,7 +73,7 @@ export default class IDate extends Date {
     }
 
     const converted = toJalaali(this.gdate.getFullYear(), this.gdate.getMonth() + 1, this.gdate.getDate())
-    this.jdate = [converted.jy, converted.jm - 1, converted.jd]
+    this.jdate = [converted.jy, converted.jm, converted.jd]
 
     methods.forEach(method => {
       IDate.prototype[method] = function () {
