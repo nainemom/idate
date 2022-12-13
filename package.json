@@ -3,6 +3,7 @@
   "version": "0.1.6",
   "description": "Iranian Date constractor for Javascript",
   "main": "dist/idate.min.js",
+  "types": "./index.d.ts",
   "scripts": {
     "clean": "rimraf ./dist",
     "build": "cross-env NODE_ENV=production webpack --progress --colors",
